@@ -20,9 +20,6 @@ class Student
 	   char name[10];
 	   char major[10];
 	   char clas[10];
-	   //string name;
-	  // string major;
-	   //string clas;
 	   int math_sc;
 	   int English_sc;
 	   int C_sc;
