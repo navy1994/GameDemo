@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{9a52048b-4be6-491f-93ff-c8bafa2266eb}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{f0c9fde6-7659-4d3c-ac92-da2db887e87e}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{0aafa5a0-0adf-4394-a4af-b98246a748d4}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;png;manifest</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\youxi1.ico">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\CloseSelected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\CloseNormal.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\HelloWorld.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\newgameB.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\s_1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\YuGuZD.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\back_1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\background.mp3">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\cat.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\gameover.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\enemy.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\bg.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\battle.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\battle3.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\newgameA.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\aboutA.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\blue-shooting-stars.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\continueA.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\back.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\backA.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\backB.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\pew-pew-lei.mp3">
+      <Filter>resource</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="youxi1.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverScene.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverLayer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuScene.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOverScene.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOverLayer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuScene.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
