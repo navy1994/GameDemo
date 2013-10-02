@@ -27,28 +27,7 @@
     <None Include="..\Resources\HelloWorld.png">
       <Filter>resource</Filter>
     </None>
-    <None Include="..\Resources\newgameB.png">
-      <Filter>resource</Filter>
-    </None>
-    <None Include="..\Resources\s_1.png">
-      <Filter>resource</Filter>
-    </None>
-    <None Include="..\Resources\YuGuZD.png">
-      <Filter>resource</Filter>
-    </None>
-    <None Include="..\Resources\back_1.png">
-      <Filter>resource</Filter>
-    </None>
-    <None Include="..\Resources\background.mp3">
-      <Filter>resource</Filter>
-    </None>
-    <None Include="..\Resources\cat.png">
-      <Filter>resource</Filter>
-    </None>
     <None Include="..\Resources\gameover.png">
-      <Filter>resource</Filter>
-    </None>
-    <None Include="..\Resources\enemy.png">
       <Filter>resource</Filter>
     </None>
     <None Include="..\Resources\bg.png">
@@ -57,31 +36,82 @@
     <None Include="..\Resources\battle.png">
       <Filter>resource</Filter>
     </None>
-    <None Include="..\Resources\battle3.png">
-      <Filter>resource</Filter>
-    </None>
-    <None Include="..\Resources\newgameA.png">
-      <Filter>resource</Filter>
-    </None>
-    <None Include="..\Resources\aboutA.png">
-      <Filter>resource</Filter>
-    </None>
-    <None Include="..\Resources\blue-shooting-stars.png">
-      <Filter>resource</Filter>
-    </None>
-    <None Include="..\Resources\continueA.png">
-      <Filter>resource</Filter>
-    </None>
-    <None Include="..\Resources\back.png">
-      <Filter>resource</Filter>
-    </None>
     <None Include="..\Resources\backA.png">
       <Filter>resource</Filter>
     </None>
     <None Include="..\Resources\backB.png">
       <Filter>resource</Filter>
     </None>
-    <None Include="..\Resources\pew-pew-lei.mp3">
+    <None Include="..\Resources\fighter.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\bullet.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\diji.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\zidan.wav">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\back.wav">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\baozha.wav">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\bj.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\exit2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\help1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\help2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\pause1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\pause2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\start1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\start2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\win.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\about1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\about2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\back1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\exit1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\back4.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\back3.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\bullet2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\back2.jpg">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\back.jpg">
       <Filter>resource</Filter>
     </None>
   </ItemGroup>

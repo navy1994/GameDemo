@@ -40,7 +40,7 @@ bool MenuScene::init()
     {
           CC_BREAK_IF(! CCScene::init());
 
-		  CCSprite *bg = CCSprite::create("blue-shooting-stars.png");
+		  CCSprite *bg = CCSprite::create("bj.png");
 		  bg->setAnchorPoint(CCPointZero);
 		  bg->setPosition(CCPointZero);
 		  this->addChild(bg);
@@ -53,63 +53,34 @@ bool MenuScene::init()
 		
             CC_BREAK_IF(! pCloseItem);
 
-        // Place the menu item bottom-right conner.
         pCloseItem->setPosition(ccp(CCDirector::sharedDirector()->getWinSize().width - 20, 20));
-
-        // Create a menu with the "close" menu item, it's an auto release object.
         CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
         pMenu->setPosition(CCPointZero);
         CC_BREAK_IF(! pMenu);
 
-        // Add the menu to HelloWorld layer as a child layer.
         this->addChild(pMenu, 1);
 
-        // 2. Add a label shows "Hello World".
-
-        // Create a label and initialize with string "Hello World".
-        CCLabelTTF* pLabel = CCLabelTTF::create("Main Menu", "Arial", 30);
-		
-        CC_BREAK_IF(! pLabel);
-
-        // Get window size and place the label upper. 
-        CCSize size = CCDirector::sharedDirector()->getWinSize();
-        pLabel->setPosition(ccp(size.width / 2, size.height - 50));
-		pLabel->setColor(ccc3(0,0,0));
-        // Add the label to HelloWorld layer as a child layer.
-        this->addChild(pLabel, 1);
+		  CCSize size = CCDirector::sharedDirector()->getWinSize();
+  
 
 		CCMenuItemImage *myItems = CCMenuItemImage::create(
-            "newgameA.png",
-            "newgameB.png",
+            "start1.png",
+            "start2.png",
             this,
             menu_selector(MenuScene::menuNewGameCallback));
             CC_BREAK_IF(!myItems); 
             myItems->setPosition(ccp(size.width/2, size.height/2)); 
             CCMenu* myMenu = CCMenu::menuWithItems(myItems, NULL); 
-			myMenu->setScale(0.5);
             myMenu->setPosition(CCPointZero); 
             CC_BREAK_IF(!myMenu); 
             this->addChild(myMenu, 1); 
 
-			CCSprite *about = CCSprite::create("aboutA.png");
+			CCSprite *about = CCSprite::create("about1.png");
 		   about->setAnchorPoint(CCPointZero);
-		   about->setScale(0.5);
 		   about->setPosition(ccp(size.width/2 - 55, size.height/2 - 50));
 		   this->addChild(about);
 
-		   CCSprite *cat = CCSprite::create("cat.png");
-		   cat->setAnchorPoint(CCPointZero);
-		   cat->setScale(0.5);
-		   cat->setPosition(ccp(size.width/2 - 150, size.height/2 - 40));
-		   this->addChild(cat);
-
-		   CCSprite *enemy = CCSprite::create("enemy.png");
-		  enemy->setAnchorPoint(CCPointZero);
-		   enemy->setScale(0.5);
-		   enemy->setPosition(ccp(size.width/2 + 75, size.height/2 - 40));
-		   this->addChild(enemy);
-
-			SimpleAudioEngine::sharedEngine()->playBackgroundMusic("background.mp3",true);
+			SimpleAudioEngine::sharedEngine()->playBackgroundMusic("back.wav",true);
 
 
         bRet = true;

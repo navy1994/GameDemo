@@ -21,11 +21,11 @@ bool GameOverScene::init()
 		this->addChild(gameOverlayer);
 
 	    CCMenuItemImage *myItems = CCMenuItemImage::create(
-            "back.png",
-            "back.png",
+            "back4.png",
+            "back3.png",
             this,
             menu_selector(GameOverScene::mainMenuCallback));
-            myItems->setPosition(ccp(size.width/2, size.height/2 + 50)); 
+            myItems->setPosition(ccp(size.width/2, size.height/2 + 70)); 
             CCMenu* myMenu = CCMenu::menuWithItems(myItems, NULL); 
 			myMenu->setScale(0.7);
             myMenu->setPosition(CCPointZero); 
@@ -36,8 +36,9 @@ bool GameOverScene::init()
             "backB.png",
             this,
             menu_selector(GameOverScene::gameCallback));
-            bItems->setPosition(ccp(CCDirector::sharedDirector()->getWinSize().width - 30, 30)); 
+            bItems->setPosition(ccp(CCDirector::sharedDirector()->getWinSize().width - 30, 10)); 
             CCMenu* bMenu = CCMenu::menuWithItems(bItems, NULL); 
+			bMenu->setScale(0.7);
             bMenu->setPosition(CCPointZero); 
             this->addChild(bMenu, 1); 
 

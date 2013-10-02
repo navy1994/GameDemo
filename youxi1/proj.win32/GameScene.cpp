@@ -20,7 +20,6 @@ CCScene* GameScene::scene()
     CCScene * scene = NULL;
     do 
     {
-        // 'scene' is an autorelease object
         scene = CCScene::create();
         CC_BREAK_IF(! scene);
 
@@ -50,18 +49,31 @@ bool GameScene::init()
 			arrayProjectile = CCArray::create();
 			arrayTarget = CCArray::create();
 
-			CCSprite *bg = CCSprite::create("bg.png");
-			bg->setAnchorPoint(CCPointZero);
-			bg->setPosition(CCPointZero);
-			this->addChild(bg,0);
+			bg1 = CCSprite::create("back1.jpg");
+			bg1->setAnchorPoint(CCPointZero);
+			bg1->setPosition(ccp(0,0));
+			bg1->getTexture()->setAntiAliasTexParameters();
+			this->addChild(bg1);
+			
+			bg2=CCSprite::create("back1.jpg");
+			bg2->setAnchorPoint(CCPointZero);
+			bg2->setPosition(ccp(0,bg2->getContentSize().height-2));
+			bg1->getTexture()->setAntiAliasTexParameters();
+			this->addChild(bg2);
 
-			CCSprite *player = CCSprite::create("cat.png");
-			player->setScale(0.3);
-			player->setPosition(ccp(player->getContentSize().width/2-40,winSize.height/2));
+			this->schedule(schedule_selector(GameScene::backgroundMove),0.01f);  
+
+			player = CCSprite::create("fighter.png");
+			player->setScale(0.5);
+			player->setPosition(ccp(winSize.width/2,20));
 			this->addChild(player);
 			
 			arrayProjectile->retain();
 			arrayTarget->retain();
+
+			SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("back.wav");
+			SimpleAudioEngine::sharedEngine()->preloadEffect("zidan.wav");
+			SimpleAudioEngine::sharedEngine()->preloadEffect("baozha.wav");
 
 			this->schedule(schedule_selector(GameScene::gameLogic),1.0);
             this->schedule(schedule_selector(GameScene::update));
@@ -75,6 +87,17 @@ bool GameScene::init()
 		   return false;
 		}
 }
+
+void GameScene::backgroundMove(float dt)  
+{  
+	bg1->setPositionY(bg1->getPositionY()-2);  
+	bg2->setPositionY(bg1->getPositionY()+bg1->getContentSize().height-2);  
+	if (bg2->getPositionY()==0)//要注意因为背景图高度是842，所以每次减去2最后可以到达0，假如背景高度是841，那么这个条件永远达不到，滚动失败   
+	{  
+		bg1->setPositionY(0);  
+	}  
+}  
+
 
 void GameScene::update(float dt)
 {
@@ -112,21 +135,22 @@ void GameScene::update(float dt)
 
 void GameScene::ccTouchesEnded(cocos2d::CCSet *touches,cocos2d::CCEvent *event)
 {
-
 	CCTouch *touch =(CCTouch*)touches->anyObject();
 	CCPoint location = touch->getLocationInView();
 	location = this->convertTouchToNodeSpace(touch);
 
 	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 
-	CCSprite *projectile = CCSprite::create("YuGuZD.png");
-	projectile->setScale(0.5);
-	projectile->setPosition(ccp(30,winSize.height/2));
+	CCSprite *projectile = CCSprite::create("bullet2.png");
 
+	projectile->setScale(2);
+
+	projectile->setPosition(ccp(winSize.width/2,20));
+	
 	float offX = location.x - projectile->getPositionX();
 	float offY = location.y - projectile->getPositionY();
 
-	if(offX <= 0)
+	if(offY <= 0)
 	{
 		return;
 	}
@@ -134,9 +158,9 @@ void GameScene::ccTouchesEnded(cocos2d::CCSet *touches,cocos2d::CCEvent *event)
 	this->addChild(projectile);
 	arrayProjectile->addObject(projectile);
 
-	float angle = offY / offX;
-	float realX = winSize.width + projectile->getContentSize().width/2 + 20;
-	float realY = realX * angle +projectile->getPositionY();
+	float angle = offX / offY;
+	float realY = winSize.height + projectile->getContentSize().height/2 + 20;
+	float realX = realY * angle +projectile->getPositionX();
 
 	CCPoint finalPosition = ccp(realX, realY);
 
@@ -146,13 +170,16 @@ void GameScene::ccTouchesEnded(cocos2d::CCSet *touches,cocos2d::CCEvent *event)
 
 	projectile->runAction(CCSequence::create(CCMoveTo::create(realMoveDuration,finalPosition),
 		CCCallFuncN::create(this, callfuncN_selector(GameScene::spriteMoveFinished)),NULL));
+	SimpleAudioEngine::sharedEngine()->playEffect("zidan.wav", false);
+	SimpleAudioEngine::sharedEngine()->setEffectsVolume(0.2f);
 }
+
+
 
 void GameScene::spriteMoveFinished(CCNode *sender)
 {
 	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 	CCSprite *sprite = (CCSprite*)sender;
-	//this->removeChild(sprite,true);
 	if(sprite->getTag() == 1)
 	{
 		arrayTarget->removeObject(sprite);
@@ -176,13 +203,13 @@ void GameScene::addTarget()
 {
 	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 
-	CCSprite *target = CCSprite::create("enemy.png");
-	int minY = target->getContentSize().height/2;
-	int maxY = winSize.height - target->getContentSize().height/2;
-	int rangeY = maxY - minY;
-	int actualY = rand()%rangeY + minY;
-	target->setScale(0.3);
-	target->setPosition(ccp(((winSize.width) + (target->getContentSize().width/2)),actualY));
+	CCSprite *target = CCSprite::create("diji.png");
+	int minX = target->getContentSize().width/2;
+	int maxX = winSize.width - target->getContentSize().width/2;
+	int rangeX = maxX - minX;
+	int actualX = rand()%rangeX + minX;
+	target->setScale(0.5);
+	target->setPosition(ccp(actualX,((winSize.height) + (target->getContentSize().height/2))));
 	target->setTag(1);
 	this->addChild(target);
 	arrayTarget->addObject(target);
@@ -193,19 +220,19 @@ void GameScene::addTarget()
 	int rangeDuration = maxDuration - minDuration; //随机速度
 	float actrualDuration = rand()%rangeDuration + minDuration;
 
-	CCFiniteTimeAction *actionMove = CCMoveTo::create(actrualDuration,ccp(0 - target->getContentSize().width/2, actualY));
+	CCFiniteTimeAction *actionMove = CCMoveTo::create(actrualDuration,ccp(actualX,0 - target->getContentSize().height/2 ));
 
 	CCFiniteTimeAction *actionMoveDone = CCCallFuncN::create(this,callfuncN_selector(GameScene::spriteMoveFinished));
 	target->runAction(CCSequence::create(actionMove,actionMoveDone,NULL));
 }
 
 void GameScene::finishShoot()
-
 {
     this->addChild(projectile);
     arrayProjectile->addObject(projectile);
-    SimpleAudioEngine::sharedEngine()->playEffect("pew-pew-lei.mp3", false);
-
+    SimpleAudioEngine::sharedEngine()->playEffect("zidan.wav", false);
+	SimpleAudioEngine::sharedEngine()->setEffectsVolume(0.2f);
     projectile->release();
     projectile = NULL;
 }
+

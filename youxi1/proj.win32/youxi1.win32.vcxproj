@@ -122,28 +122,38 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="..\Resources\aboutA.png" />
-    <None Include="..\Resources\back.png" />
+    <None Include="..\Resources\about1.png" />
+    <None Include="..\Resources\about2.png" />
+    <None Include="..\Resources\back.jpg" />
+    <None Include="..\Resources\back.wav" />
+    <None Include="..\Resources\back1.png" />
+    <None Include="..\Resources\back2.jpg" />
+    <None Include="..\Resources\back3.png" />
+    <None Include="..\Resources\back4.png" />
     <None Include="..\Resources\backA.png" />
     <None Include="..\Resources\backB.png" />
-    <None Include="..\Resources\background.mp3" />
-    <None Include="..\Resources\back_1.png" />
+    <None Include="..\Resources\baozha.wav" />
     <None Include="..\Resources\battle.png" />
-    <None Include="..\Resources\battle3.png" />
     <None Include="..\Resources\bg.png" />
-    <None Include="..\Resources\blue-shooting-stars.png" />
-    <None Include="..\Resources\cat.png" />
+    <None Include="..\Resources\bj.png" />
+    <None Include="..\Resources\bullet.png" />
+    <None Include="..\Resources\bullet2.png" />
     <None Include="..\Resources\CloseNormal.png" />
     <None Include="..\Resources\CloseSelected.png" />
-    <None Include="..\Resources\continueA.png" />
-    <None Include="..\Resources\enemy.png" />
+    <None Include="..\Resources\diji.png" />
+    <None Include="..\Resources\exit1.png" />
+    <None Include="..\Resources\exit2.png" />
+    <None Include="..\Resources\fighter.png" />
     <None Include="..\Resources\gameover.png" />
     <None Include="..\Resources\HelloWorld.png" />
-    <None Include="..\Resources\newgameA.png" />
-    <None Include="..\Resources\newgameB.png" />
-    <None Include="..\Resources\pew-pew-lei.mp3" />
-    <None Include="..\Resources\s_1.png" />
-    <None Include="..\Resources\YuGuZD.png" />
+    <None Include="..\Resources\help1.png" />
+    <None Include="..\Resources\help2.png" />
+    <None Include="..\Resources\pause1.png" />
+    <None Include="..\Resources\pause2.png" />
+    <None Include="..\Resources\start1.png" />
+    <None Include="..\Resources\start2.png" />
+    <None Include="..\Resources\win.png" />
+    <None Include="..\Resources\zidan.wav" />
     <None Include="res\youxi1.ico" />
   </ItemGroup>
   <ItemGroup>

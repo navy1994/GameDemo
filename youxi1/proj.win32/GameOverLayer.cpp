@@ -15,7 +15,7 @@ bool GameOverLayer::init()
 	{
 		
 		CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-		bg = CCSprite::create("back_1.png");
+		bg = CCSprite::create("bg.png");
 		bg->setAnchorPoint(CCPointZero);
 		bg->setPosition(ccp(0,0));
 		this->addChild(bg);
